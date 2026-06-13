@@ -1,0 +1,67 @@
+{
+  "name": "Inbound Lead Router Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "inbound-lead",
+        "responseMode": "lastNode"
+      },
+      "id": "webhook-lead",
+      "name": "Inbound Lead Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const lead = items[0].json; const message = (lead.message || '').toLowerCase(); let priority = 'medium'; if (message.includes('urgent') || message.includes('budget')) priority = 'high'; if (message.includes('student') || message.includes('internship')) priority = 'low'; return [{ json: { ...lead, priority, owner: priority === 'high' ? 'sales-owner-a' : 'sales-owner-b' } }];"
+      },
+      "id": "classify-lead",
+      "name": "Classify Lead",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "id": "return-routing",
+      "name": "Return Routing Decision",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [800, 300]
+    }
+  ],
+  "connections": {
+    "Inbound Lead Webhook": {
+      "main": [
+        [
+          {
+            "node": "Classify Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Lead": {
+      "main": [
+        [
+          {
+            "node": "Return Routing Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Demo workflow only. Add credentials inside n8n before production use."
+  }
+}
