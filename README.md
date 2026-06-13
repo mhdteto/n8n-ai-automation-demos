@@ -32,9 +32,9 @@ An inbound lead form can trigger a workflow that:
 
 ## Workflow mockups
 
-![Inbound lead router workflow](screenshots/lead-router.png)
+![Inbound lead router workflow](screenshots/lead-router.svg)
 
-![AI email classifier workflow](screenshots/email-classifier.png)
+![AI email classifier workflow](screenshots/email-classifier.svg)
 
 ## How to use
 
