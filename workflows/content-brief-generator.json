@@ -1,0 +1,44 @@
+{
+  "name": "Content Brief Generator Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "functionCode": "return [{ json: { keyword: 'AI consultant Morocco', audience: 'SMB decision makers', service: 'AI visibility audit' } }];"
+      },
+      "id": "sample-brief-input",
+      "name": "Sample Brief Input",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const input = items[0].json; return [{ json: { title: `${input.keyword}: practical guide for ${input.audience}`, outline: ['Problem', 'Buyer questions', 'Service explanation', 'FAQ', 'Next step'], intent: 'commercial investigation', recommended_cta: `Book a ${input.service}` } }];"
+      },
+      "id": "generate-brief",
+      "name": "Generate Content Brief",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [520, 300]
+    }
+  ],
+  "connections": {
+    "Sample Brief Input": {
+      "main": [
+        [
+          {
+            "node": "Generate Content Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Demo workflow for creating SEO/AEO/GEO content briefs from simple business context."
+  }
+}
