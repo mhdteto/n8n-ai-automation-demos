@@ -1,0 +1,44 @@
+{
+  "name": "AI Email Classifier Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "functionCode": "return [{ json: { from: 'demo@example.com', subject: 'Request for pricing', body: 'Hello, we need pricing for an AI automation project.' } }];"
+      },
+      "id": "sample-email",
+      "name": "Sample Email",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const email = items[0].json; const body = `${email.subject} ${email.body}`.toLowerCase(); let intent = 'general'; if (body.includes('pricing') || body.includes('quote')) intent = 'sales'; if (body.includes('support') || body.includes('issue')) intent = 'support'; return [{ json: { ...email, intent, recommended_queue: intent === 'sales' ? 'sales' : 'operations' } }];"
+      },
+      "id": "classify-email",
+      "name": "Classify Email Intent",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [520, 300]
+    }
+  ],
+  "connections": {
+    "Sample Email": {
+      "main": [
+        [
+          {
+            "node": "Classify Email Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Demo workflow with sample data only. Replace the function classifier with an AI node if needed."
+  }
+}
