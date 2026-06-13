@@ -1,0 +1,44 @@
+{
+  "name": "Meeting Summary to CRM Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "functionCode": "return [{ json: { account: 'Example Company', notes: 'The prospect wants to automate lead qualification. Budget discussion planned next week. Main concern is implementation time.' } }];"
+      },
+      "id": "sample-notes",
+      "name": "Sample Meeting Notes",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const data = items[0].json; return [{ json: { account: data.account, crm_summary: data.notes, next_step: 'Schedule budget and implementation discussion', risk: 'Implementation time concern', stage: 'Discovery' } }];"
+      },
+      "id": "structure-crm-update",
+      "name": "Structure CRM Update",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [520, 300]
+    }
+  ],
+  "connections": {
+    "Sample Meeting Notes": {
+      "main": [
+        [
+          {
+            "node": "Structure CRM Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Demo workflow for turning meeting notes into CRM fields. No real CRM credentials included."
+  }
+}
