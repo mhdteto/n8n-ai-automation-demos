@@ -1,0 +1,8 @@
+{
+  "intent": "sales_inquiry",
+  "priority": "medium",
+  "suggested_label": "AI automation inquiry",
+  "summary": "The sender wants information about an automation audit for reducing manual sales follow-up work.",
+  "recommended_next_action": "Reply with audit overview and propose a discovery call.",
+  "human_review_required": true
+}
