@@ -14,7 +14,7 @@
     },
     {
       "parameters": {
-        "functionCode": "const lead = items[0].json; const message = (lead.message || '').toLowerCase(); let priority = 'medium'; if (message.includes('urgent') || message.includes('budget')) priority = 'high'; if (message.includes('student') || message.includes('internship')) priority = 'low'; return [{ json: { ...lead, priority, owner: priority === 'high' ? 'sales-owner-a' : 'sales-owner-b' } }];"
+        "functionCode": "const lead = items[0].json; const message = (lead.message || '').toLowerCase(); let priority = 'medium'; if (message.includes('urgent') || message.includes('budget')) priority = 'high'; if (message.includes('student') || message.includes('internship')) priority = 'low'; return [{ json: { ...lead, priority, owner: priority === 'high' ? 'sales-owner-a' : 'sales-owner-b', human_review_required: true } }];"
       },
       "id": "classify-lead",
       "name": "Classify Lead",
@@ -62,6 +62,6 @@
     "executionOrder": "v1"
   },
   "meta": {
-    "description": "Demo workflow only. Add credentials inside n8n before production use."
+    "description": "Demo workflow only. Add credentials inside n8n before production use. Human review is required before commercial routing or follow-up."
   }
 }
