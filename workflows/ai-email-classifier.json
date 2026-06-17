@@ -13,7 +13,7 @@
     },
     {
       "parameters": {
-        "functionCode": "const email = items[0].json; const body = `${email.subject} ${email.body}`.toLowerCase(); let intent = 'general'; if (body.includes('pricing') || body.includes('quote')) intent = 'sales'; if (body.includes('support') || body.includes('issue')) intent = 'support'; return [{ json: { ...email, intent, recommended_queue: intent === 'sales' ? 'sales' : 'operations' } }];"
+        "functionCode": "const email = items[0].json; const body = `${email.subject} ${email.body}`.toLowerCase(); let intent = 'general'; if (body.includes('pricing') || body.includes('quote')) intent = 'sales'; if (body.includes('support') || body.includes('issue')) intent = 'support'; return [{ json: { ...email, intent, recommended_queue: intent === 'sales' ? 'sales' : 'operations', human_review_required: true } }];"
       },
       "id": "classify-email",
       "name": "Classify Email Intent",
@@ -39,6 +39,6 @@
     "executionOrder": "v1"
   },
   "meta": {
-    "description": "Demo workflow with sample data only. Replace the function classifier with an AI node if needed."
+    "description": "Demo workflow with sample data only. Replace the function classifier with an AI node if needed. Human review is required before labeling, routing or replying to email."
   }
 }
