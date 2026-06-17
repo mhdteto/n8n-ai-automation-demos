@@ -1,0 +1,8 @@
+{
+  "lead_category": "sales_inquiry",
+  "urgency": "medium",
+  "suggested_owner": "sales_team",
+  "summary": "The lead is interested in AI automation for inbound lead qualification and routing.",
+  "recommended_next_step": "Send discovery questions and offer a short automation audit call.",
+  "human_review_required": true
+}
