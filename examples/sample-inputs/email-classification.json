@@ -1,0 +1,5 @@
+{
+  "from": "client@example.com",
+  "subject": "Question about automation audit",
+  "body": "Hello, we are interested in understanding how AI automation could help our sales team reduce manual follow-up work. Can you share more information about your audit process?"
+}
