@@ -1,0 +1,9 @@
+{
+  "name": "Sara Benali",
+  "company": "Atlas Home Services",
+  "email": "sara@example.com",
+  "source": "website_contact_form",
+  "company_size": "25 employees",
+  "service_interest": "AI automation for lead qualification",
+  "message": "We receive many inbound requests from our website and want to classify them faster before assigning them to our sales team."
+}
