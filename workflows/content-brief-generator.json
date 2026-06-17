@@ -13,7 +13,7 @@
     },
     {
       "parameters": {
-        "functionCode": "const input = items[0].json; return [{ json: { title: `${input.keyword}: practical guide for ${input.audience}`, outline: ['Problem', 'Buyer questions', 'Service explanation', 'FAQ', 'Next step'], intent: 'commercial investigation', recommended_cta: `Book a ${input.service}` } }];"
+        "functionCode": "const input = items[0].json; return [{ json: { title: `${input.keyword}: practical guide for ${input.audience}`, outline: ['Problem', 'Buyer questions', 'Service explanation', 'FAQ', 'Next step'], intent: 'commercial investigation', recommended_cta: `Book a ${input.service}`, human_review_required: true } }];"
       },
       "id": "generate-brief",
       "name": "Generate Content Brief",
@@ -39,6 +39,6 @@
     "executionOrder": "v1"
   },
   "meta": {
-    "description": "Demo workflow for creating SEO/AEO/GEO content briefs from simple business context."
+    "description": "Demo workflow for creating SEO/AEO/GEO content briefs from simple business context. Human review is required before publication or customer use."
   }
 }
