@@ -1,0 +1,9 @@
+Account: Example Services Group
+Contact: Operations Manager
+Meeting topic: AI automation opportunities
+
+Notes:
+The team spends several hours per week manually sorting inbound requests and updating CRM records. They are interested in automating lead classification, meeting summaries and internal notifications. They want to keep human approval before any customer-facing action.
+
+Next steps:
+Send a short automation opportunity summary and propose a pilot workflow for inbound lead routing.
