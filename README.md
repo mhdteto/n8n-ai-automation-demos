@@ -16,6 +16,29 @@ This repository provides simple n8n workflow examples that show how AI can suppo
 - Content brief generator workflow
 - Setup guide
 - Use case documentation
+- Safety and data handling guide
+- Human review guidelines
+- Workflow testing checklist
+- Sample input files
+- Sample output files
+- Roadmap
+- Changelog
+
+## Documentation
+
+- [How to import workflows](docs/how-to-import-workflows.md)
+- [Workflow library](docs/workflow-library.md)
+- [Safety and data handling](docs/safety-and-data-handling.md)
+- [Human review guidelines](docs/human-review-guidelines.md)
+- [Workflow testing checklist](docs/workflow-testing-checklist.md)
+- [AI automation use case scoring](docs/use-case-scoring.md)
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+
+## Examples
+
+- [Sample inputs](examples/sample-inputs/)
+- [Sample outputs](examples/sample-outputs/)
 
 ## Use case
 
@@ -47,6 +70,14 @@ An inbound lead form can trigger a workflow that:
 ## Business value
 
 These demos help teams identify low-risk automation opportunities, reduce manual sorting and create repeatable workflows for common business operations.
+
+## Disclaimer
+
+These workflows are demos.
+
+They are not production-ready systems and should not be used with real business data without reviewing credentials, privacy, permissions, error handling, human approval steps and compliance requirements.
+
+AI-generated outputs should be reviewed by a human before being used in customer-facing, CRM or operational workflows.
 
 ## Author
 
