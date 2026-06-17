@@ -13,7 +13,7 @@
     },
     {
       "parameters": {
-        "functionCode": "const data = items[0].json; return [{ json: { account: data.account, crm_summary: data.notes, next_step: 'Schedule budget and implementation discussion', risk: 'Implementation time concern', stage: 'Discovery' } }];"
+        "functionCode": "const data = items[0].json; return [{ json: { account: data.account, crm_summary: data.notes, next_step: 'Schedule budget and implementation discussion', risk: 'Implementation time concern', stage: 'Discovery', human_review_required: true } }];"
       },
       "id": "structure-crm-update",
       "name": "Structure CRM Update",
@@ -39,6 +39,6 @@
     "executionOrder": "v1"
   },
   "meta": {
-    "description": "Demo workflow for turning meeting notes into CRM fields. No real CRM credentials included."
+    "description": "Demo workflow for turning meeting notes into CRM fields. No real CRM credentials included. Human review is required before saving updates to a CRM."
   }
 }
